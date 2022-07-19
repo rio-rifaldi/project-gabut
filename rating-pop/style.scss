@@ -1,0 +1,149 @@
+@use "../function.scss" as *;
+
+$White: hsl(0, 0%, 100%);
+$Light-Grey: hsl(217, 12%, 63%);
+$Medium-Grey: hsl(216, 12%, 54%);
+$Dark-Blue: hsl(213, 19%, 18%);
+$very-Dark-Blue: hsl(216, 12%, 8%);
+$Orange: hsl(25, 97%, 53%);
+
+*{
+    @extend %reset;
+    font-family:"Inter", sans-serif;
+    box-sizing: border-box
+}
+
+body{
+    @include flex(center,center,100vh);
+    background-color: black;
+
+
+}
+
+h1{
+    color: $White;
+    margin: 2.5vh 0;
+    font-weight: bold;
+    font-size: 4vh;
+}
+p{
+    color: $Medium-Grey;
+    font-weight: 700;
+    font-size: 2.3vh;
+    line-height: 3.8vh;
+}
+
+
+.container{
+    width: 58vh;
+    height: 65vh;
+    // border: 2px solid white;
+    position: relative;
+    padding: 4vh;
+    background-color: $very-Dark-Blue;
+    border-radius: 4vh;
+
+    .star{
+        position: relative;
+        width: 7vh;
+        height: 7vh;
+        background-color: $Dark-Blue;
+        border-radius: 5vh;
+        margin-bottom: 4vh;
+
+        img{
+            position: absolute;
+            top: 20%;
+            left: 30%;
+            width: 2.8vh;
+            
+        }
+    }
+
+
+    .content{
+        margin: 5px 0px;
+
+        ul{
+            display: flex;
+            list-style: none;
+            margin: 4vh 0;
+            justify-content: space-around;
+
+            li{
+                font-size: 2.3vh;
+                height: 7vh;
+                width: 7vh;
+                display: inline-block;
+                border-radius: 5vh;
+                background-color: $Dark-Blue;
+                text-align: center;
+                line-height: 7vh;
+                transition: all .3s ease-in-out;
+                color: $Medium-Grey;
+                font-weight: 700;
+            }
+            li:hover{
+                background-color: $Orange;
+                cursor: pointer;
+                color: $White;
+            }
+        }
+
+        button{
+            color: $White;
+            font-size: 2.2vh;
+            letter-spacing: .2vh;
+            font-weight: 700;
+            text-transform: capitalize;
+            width: 90%;
+            border-radius: 4vh;
+            margin: 6vh auto;
+            height: 7vh;
+            display: block;
+            background-color: $Orange;
+            border: none;
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+
+        }
+        
+        button:hover{
+            background-color: $White;
+            color: $Orange;
+            font-weight: 900;
+        }
+    }
+
+    img{
+        width: 31vh;
+        display: block;
+        position: relative;
+        top: 1vh;
+        margin: .4vh auto;
+        
+    }
+    span{
+        display: inline-block;
+        border-radius: 4vh;
+        color: $Orange;
+        padding: 1.6vh 4vh;
+        background-color: $Dark-Blue;
+        margin: 2vh 0;
+        letter-spacing: .1vh;
+        font-size: 2.1vh;
+    }
+    .main{
+      
+        // border: 2px solid white;
+        position: relative;
+        top: 5vh;
+        text-align: center;
+       h1{
+        font-size: 4.6vh;
+       }
+      
+    }
+}
+
+

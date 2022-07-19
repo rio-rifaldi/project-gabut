@@ -1,0 +1,74 @@
+
+@use "sass:list";
+$image :(
+    "home" : url("/side-bar/icon/home-purple.svg") ,
+    "dashboard" : url("/side-bar/icon/box-purple.svg") ,
+    "project" : url("/side-bar/icon/file-text-purple.svg") ,
+    "taks" : url("/side-bar/icon/layers-purple.svg") ,
+    "reporting" : url("/side-bar/icon/sliders-purple.svg") ,
+    "notification" : url("/side-bar/icon/bell-purple.svg") ,
+    "support" : url("/side-bar/icon/help-circle-purple.svg") ,
+    "settings" : url("/side-bar/icon/settings-purple.svg") ,
+
+);
+$size :(
+    "small" : 10vh , 
+    "medium" : 20vh ,
+    "large" : 30vh ,
+    "very-large" : 40vh ,
+
+);
+$color :(
+    "background" : #2c2c2c,
+    "input" : #333333 ,
+    "notif-icon" : #B5FFC1 ,
+    "notif" : #BFB2FF ,
+    "color" : #9E9E9E ,
+
+
+);
+
+@mixin flex($atas-bawah,$kanan_kiri,$tinggi:null) {
+    display: flex;
+    align-items: $atas-bawah;
+    justify-content: $kanan_kiri;
+    height: $tinggi;
+
+}
+%reset{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+@mixin vert-side{
+
+    @each $key,$val in $image
+        
+    {
+            $s:index(map-values($image),$val);
+        
+            &:nth-child(#{$s}) a::before{
+                content:$val;
+                display: inline-block;
+                position: relative;
+                padding: 1px 13px;
+                padding-right: 25px;
+                top: 2px;
+                transition: transform .4s ease;
+                filter:brightness(10);
+            
+            }
+            &:hover:nth-child(#{$s}) a::before{
+                filter: none;
+                transform: scale(1.2);
+                
+            } 
+          
+        }
+        
+        
+    }
+
